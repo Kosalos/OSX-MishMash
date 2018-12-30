@@ -1,0 +1,90 @@
+MishMash Fractal
+Collection of algorithms and UX from several other
+fractal apps, hoping to come with a new and interesting display.
+
+The panel on the left holds two kinds of controls:
+buttons, and one or two dimensional widgets.
+
+Widgets:
+Mouse click on a widget to select it.
+It's legend will turn Green.
+You can also move the focus up/down with the '<' and '>' keys.
+Press the assigned Hotkey character to move the focus directly.
+
+Now on the image:
+Mouse drag to control the widget's parameters.
+You can also use the Arrow keys.
+Note: Hold down the <option> key to increase the alteration amount.
+Note: Hold down the <A> key to decrease the alteration amount.
+
+Note: The mouse scroll wheel controls Zoom at all times.
+
+Buttons:
+A button command is performed by Mouse clicking on the legend.
+
+Note: Press <0> to toggle display of the control panel.
+Note: Use can exit program by press the <esc> key.
+
+E. Edit Grammar
+   The app Flam3 uses a weighted random function to
+   select which algorithm is used every cycle.
+   This app instead uses a simple grammar, where the
+   characters in a 1-12 character string specify which
+   algorithm is used.
+   The "grammar string" is repeated as necessary during a drawing session.
+   Press "E" to launch the grammar editor dialog.
+
+N. Rnd Grammar
+   Press "N" to randomize just the grammar string.
+
+The current grammar string is displayed just below.
+
+Groups 1 to 4 :
+
+   The grammar string selects from 4 algorithms for each cycle.
+   These 4 groups hold all the data for each algorithm.
+   Press on the function name (the word at the top of each group)
+   to launch the function selection dialog.
+   The functions themselves come from the Flam3 app.
+   * Translation
+   * Scale
+   * Rotate affect the function output after every cycle.
+
+   The function group gains a tinted background color when
+   that function is included in the grammar string.
+
+Visit: https://fractalforums.org/fractal-mathematics-and-new-theories/28/triangle-inequality-average-algorithm/1368
+User 3DickUlus posted a beautiful image with the fragment shader attached.
+I copied the algorithm onto this app to do some experimentation.
+
+M. Multiplier
+S. Stripe Density
+5. Escape Radius  are all params to 3DickUlus' algorithm. Check out shader code..
+
+6. Contrast
+C. Color
+   control the overall contrast and coloration of the image.
+
+W. Shadow
+  Homemade effect accentuates the image details.
+
+J. 3D Window
+   Toggle the display of the 3D Window
+
+K. 3D ROI
+   Specify the position and size of the 3D Region Of Interest (ROI).
+
+   Note: Click and Drag with the Right Mouse Button to specify the ROI directly.
+
+Z. Auto
+   Toggle whether the program automatically slowly alters the parameters.
+
+L. LoadNext
+   Load the next saved image, round-robin style.
+
+V. Save/Load
+   Launch the Save/Load dialog.
+
+H. Help
+   This dialog.
+

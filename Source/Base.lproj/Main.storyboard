@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="OSX-MishMash" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="OSX-MishMash" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="Quit OSX-MishMash" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="OSX_MishMash" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-581" y="-117"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController storyboardIdentifier="Main" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="MishMash" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="430" height="97"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-435" y="23"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="OSX_MishMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="BaseNSView" customModule="OSX_MishMash" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="446" height="191"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView id="cMF-RM-Kbh" customClass="MetalTextureView" customModule="OSX_MishMash" customModuleProvider="target">
+                                <rect key="frame" x="98" y="20" width="164" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView id="pTb-Qm-gR9" customClass="WidgetGroup" customModule="OSX_MishMash" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="70" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="metalTextureViewL" destination="cMF-RM-Kbh" id="GNh-tm-4jC"/>
+                        <outlet property="wg" destination="pTb-Qm-gR9" id="R10-AS-7OV"/>
+                        <outlet property="widget" destination="pTb-Qm-gR9" id="GUJ-7v-iin"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443" y="242"/>
+        </scene>
+        <!--Win3D-->
+        <scene sceneID="cGH-O9-3XH">
+            <objects>
+                <windowController storyboardIdentifier="Win3D" showSeguePresentationStyle="single" id="vZw-GN-IO8" userLabel="Win3D" sceneMemberID="viewController">
+                    <window key="window" title="MishMash 3D" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="224-h3-QQ4">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="376" height="96"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="vZw-GN-IO8" id="hrE-YX-xXU"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="qE8-Jx-0km" kind="relationship" relationship="window.shadowedContentViewController" id="Nu9-ca-deU"/>
+                    </connections>
+                </windowController>
+                <customObject id="A83-Ny-Ogb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="33"/>
+        </scene>
+        <!--Win3D View Controller-->
+        <scene sceneID="iCb-gA-sIj">
+            <objects>
+                <viewController id="qE8-Jx-0km" customClass="Win3DViewController" customModule="OSX_MishMash" sceneMemberID="viewController">
+                    <view key="view" id="2M2-Fu-jIV" customClass="BaseNSView" customModule="OSX_MishMash" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="192"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView id="kKX-ut-YBR" customClass="WidgetGroup" customModule="OSX_MishMash" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="70" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView id="WNl-Q1-kV6" customClass="MTKView">
+                                <rect key="frame" x="104" y="20" width="125" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView id="g3y-H0-olj" customClass="MTKView">
+                                <rect key="frame" x="247" y="20" width="125" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="d3ViewL" destination="WNl-Q1-kV6" id="j7g-bg-AaP"/>
+                        <outlet property="d3ViewR" destination="g3y-H0-olj" id="vF4-W9-lwI"/>
+                        <outlet property="wg" destination="kKX-ut-YBR" id="dXI-M5-yud"/>
+                    </connections>
+                </viewController>
+                <customObject id="mzi-LF-VNi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="242"/>
+        </scene>
+        <!--Grammar View Controller-->
+        <scene sceneID="mK8-Rx-68X">
+            <objects>
+                <viewController storyboardIdentifier="GrammarViewVC" id="9Db-pu-zLs" customClass="GrammarViewController" customModule="OSX_MishMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="LhC-OK-CQR">
+                        <rect key="frame" x="0.0" y="0.0" width="217" height="389"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <segmentedControl verticalHuggingPriority="750" id="tWb-TU-Qkh">
+                                <rect key="frame" x="18" y="355" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="qri-TL-2vm">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="tmy-T7-6mA"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="EsM-vf-1ER">
+                                <rect key="frame" x="18" y="326" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="5C8-sP-fYc">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="1"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="1"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="2U2-K5-emz"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="JM4-pq-2Kb">
+                                <rect key="frame" x="18" y="297" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="22q-za-SJo">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="2"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="2"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="dAn-HR-ydx"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="LQC-hs-StJ">
+                                <rect key="frame" x="18" y="268" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="Akj-Cq-TGB">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="3"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="3"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="ETe-jE-NZg"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="Suc-7M-NiD">
+                                <rect key="frame" x="18" y="239" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="3dR-AM-nb8">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="4"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="4"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="2Uw-i5-9YN"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="t6X-DN-vLY">
+                                <rect key="frame" x="18" y="210" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="dWb-89-FbG">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="5"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="5"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="h6F-ey-lJ5"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="IOb-ER-Zwd">
+                                <rect key="frame" x="18" y="181" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="hLI-xL-PDx">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="6"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="6"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="sOP-ou-MLB"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="fbC-Lq-tMI">
+                                <rect key="frame" x="18" y="152" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="PT1-oA-O5C">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="7"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="7"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="BPl-5C-t7S"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="2qm-JL-AMk">
+                                <rect key="frame" x="18" y="123" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="4KE-cA-Nx7">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="8"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="8"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="HeG-t1-uye"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="6Wu-w6-OZl">
+                                <rect key="frame" x="18" y="94" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="GxM-x8-BXd">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="9"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="9"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="egR-wQ-3IT"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="w9w-Yh-0yb">
+                                <rect key="frame" x="18" y="65" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="plm-DL-m5m">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="10"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="10"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="1rQ-iC-bSB"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" id="5ff-Zb-Fai">
+                                <rect key="frame" x="18" y="36" width="181" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="kWB-js-9Mh">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="1" width="31" tag="11"/>
+                                        <segment label="2" width="30" selected="YES" tag="1"/>
+                                        <segment label="3" width="30"/>
+                                        <segment label="4" tag="11"/>
+                                        <segment label="End"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="cChanged:" target="9Db-pu-zLs" id="tQB-AV-QMf"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="c1" destination="tWb-TU-Qkh" id="llm-TI-k4S"/>
+                        <outlet property="c2" destination="EsM-vf-1ER" id="INe-Qc-K3J"/>
+                        <outlet property="c3" destination="JM4-pq-2Kb" id="ab7-Eb-6y0"/>
+                        <outlet property="c4" destination="LQC-hs-StJ" id="Djh-0g-vMP"/>
+                        <outlet property="c5" destination="Suc-7M-NiD" id="fNO-xP-KNd"/>
+                        <outlet property="c6" destination="t6X-DN-vLY" id="1Du-8s-lhA"/>
+                        <outlet property="c7" destination="IOb-ER-Zwd" id="b9L-GK-s5a"/>
+                        <outlet property="c8" destination="fbC-Lq-tMI" id="Ps2-lK-dO5"/>
+                        <outlet property="c9" destination="2qm-JL-AMk" id="Oeq-wd-LbJ"/>
+                        <outlet property="cA" destination="6Wu-w6-OZl" id="4AX-fG-Gzt"/>
+                        <outlet property="cB" destination="w9w-Yh-0yb" id="yaW-OK-bji"/>
+                        <outlet property="cC" destination="5ff-Zb-Fai" id="VAS-cj-QLq"/>
+                    </connections>
+                </viewController>
+                <customObject id="pC8-KF-wGo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.5" y="596.5"/>
+        </scene>
+        <!--Equation Picker View Controller-->
+        <scene sceneID="lEU-Rr-A2u">
+            <objects>
+                <viewController storyboardIdentifier="EquationPickerVC" id="vRI-xc-Z9t" customClass="EquationPickerViewController" customModule="OSX_MishMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="LOa-9A-0Wa">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="672"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="R0a-mb-oQE">
+                                <rect key="frame" x="20" y="20" width="140" height="632"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="Nd3-jK-ShB">
+                                    <rect key="frame" x="1" y="1" width="138" height="630"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="of3-SI-VqB">
+                                            <rect key="frame" x="0.0" y="0.0" width="138" height="630"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="138" minWidth="40" maxWidth="1000" id="DzB-kw-ggq">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" title="Text Cell" id="f1K-cQ-SYt">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="Gr2-01-bNW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="h0q-s8-OtM">
+                                    <rect key="frame" x="1" y="350" width="290" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="U3R-v3-c3H">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="R0a-mb-oQE" id="jKz-Tt-oIs"/>
+                    </connections>
+                </viewController>
+                <customObject id="uzE-Ib-6OQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="328" y="738"/>
+        </scene>
+        <!--HelpVC-->
+        <scene sceneID="xH1-6v-HEC">
+            <objects>
+                <viewController storyboardIdentifier="HelpVC" id="z0m-RL-H5M" userLabel="HelpVC" customClass="HelpViewController" customModule="OSX_MishMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="TDu-jT-sb1">
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="551"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" id="4L6-Q9-r0a">
+                                <rect key="frame" x="20" y="20" width="467" height="511"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="C80-vf-MD8">
+                                    <rect key="frame" x="0.0" y="0.0" width="452" height="511"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="Fch-8u-dzT">
+                                            <rect key="frame" x="0.0" y="0.0" width="452" height="511"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="452" height="511"/>
+                                            <size key="maxSize" width="566" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Ms3-QD-1Cu">
+                                    <rect key="frame" x="452" y="0.0" width="15" height="511"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="4L6-Q9-r0a" id="a9c-TF-gmD"/>
+                    </connections>
+                </viewController>
+                <customObject id="qPH-Q3-MW5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-692" y="678"/>
+        </scene>
+        <!--SaveLoadVC-->
+        <scene sceneID="ldI-vq-X8P">
+            <objects>
+                <viewController storyboardIdentifier="SaveLoadVC" id="IvJ-PE-Zhj" userLabel="SaveLoadVC" customClass="SaveLoadViewController" customModule="OSX_MishMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" wantsLayer="YES" id="GnS-E2-gAN" userLabel="View" colorLabel="IBBuiltInLabel-Orange">
+                        <rect key="frame" x="0.0" y="0.0" width="381" height="470"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="olA-Gb-IHU" userLabel="Legend">
+                                <rect key="frame" x="18" y="433" width="401" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Save/Load Settings" id="aad-ue-gtS">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="IvJ-PE-Zhj" id="MCp-L2-ihX"/>
+                                </connections>
+                            </textField>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="eZD-3Q-XSc">
+                                <rect key="frame" x="20" y="20" width="341" height="405"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="YN6-kf-3xS">
+                                    <rect key="frame" x="1" y="1" width="339" height="403"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="yJp-NV-nsg">
+                                            <rect key="frame" x="0.0" y="0.0" width="339" height="403"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="325" minWidth="40" maxWidth="1000" id="R8K-iX-PsS">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="dye-v8-WgJ">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="SLCell" id="QDF-JJ-CKn" userLabel="SLCell" customClass="SaveLoadCell" customModule="OSX_MishMash" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" tag="1" id="kHN-tj-eTb">
+                                                                    <rect key="frame" x="256" y="-3" width="70" height="32"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LpM-dr-Xes">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="saveTapped:" target="QDF-JJ-CKn" id="0Sg-Bz-01K"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Mrq-Hv-jSF">
+                                                                    <rect key="frame" x="11" y="9" width="245" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" id="mkD-Qy-Z6g">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="legend" destination="Mrq-Hv-jSF" id="wOs-4A-BxS"/>
+                                                                <outlet property="saveButton" destination="kHN-tj-eTb" id="1Lg-I3-bsc"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="6Xt-ZM-hHN">
+                                    <rect key="frame" x="1" y="350" width="290" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="v95-rz-MGI">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="legend" destination="olA-Gb-IHU" id="mY4-uX-cmP"/>
+                        <outlet property="scrollView" destination="eZD-3Q-XSc" id="dmc-AY-LH6"/>
+                        <outlet property="tableView" destination="eZD-3Q-XSc" id="ziS-Aj-Rhm"/>
+                    </connections>
+                </viewController>
+                <customObject id="Dh6-3l-8xP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="637"/>
+        </scene>
+    </scenes>
+</document>
