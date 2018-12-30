@@ -16,10 +16,14 @@ class GrammarViewController: NSViewController {
     @IBOutlet var cB:NSSegmentedControl!
     @IBOutlet var cC:NSSegmentedControl!
 
+    var skipUpdate:Bool = false
+    
     @IBAction func cChanged(_ sender: NSSegmentedControl) {
-        let chr:Int8 = sender.selectedSegment == 4 ? Int8(0) : Int8(sender.selectedSegment + 49) // 49 = ASCII '1'
-        setGrammarCharacter(Int32(sender.tag(forSegment:0)),chr)
-        vc.updateGrammarString()
+        if !skipUpdate {
+            let chr:Int8 = sender.selectedSegment == 4 ? Int8(0) : Int8(sender.selectedSegment + 49) // 49 = ASCII '1'
+            setGrammarCharacter(Int32(sender.tag(forSegment:0)),chr)
+            vc.updateGrammarString()
+        }
     }
 
     override func viewDidLoad() {
@@ -29,11 +33,14 @@ class GrammarViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-
+        skipUpdate = true
+        
         for i in 0 ..< sList.count {
             var index = Int(getGrammarCharacter(Int32(i)))   // ASCII, or zero
             if index == 0 { index = 4 } else { index -= 49 } // string terminator = 'End', else remove ASCII offset
             sList[i].selectedSegment = index
         }
+        
+        skipUpdate = false
     }
 }

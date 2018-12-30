@@ -72,6 +72,8 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
         view.window?.delegate = self    // so we receive window size changed notifications
         resizeIfNecessary()
         dvrCount = 1 // resize metalview without delay
+        
+        wgCommand(.loadNext)
     }
     
     func windowWillClose(_ aNotification: Notification) {
@@ -270,6 +272,7 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
     
     func updateGrammarString() {
         initializeWidgetGroup()
+        wg.refresh()
         updateImage()
     }
     
@@ -279,7 +282,7 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
         func presentPopover(_ name:String) {
             let mvc = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             let vc = mvc.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(name)) as! NSViewController
-            self.present(vc, asPopoverRelativeTo: wg.bounds, of: wg, preferredEdge: .maxX, behavior: .transient)
+            self.present(vc, asPopoverRelativeTo: wg.bounds, of: wg, preferredEdge: .minX, behavior: .transient)
         }
         
         func equationPickerPopover(_ groupIndex:Int32) {
@@ -315,7 +318,7 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
         case .loadNext :
             let ss = SaveLoadViewController()
             ss.loadNext()
-            updateImage()
+            controlJustLoaded()
         case .win3D :
             toggle3DView()
         default : break
@@ -377,6 +380,12 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
     }
     
     func controlJustLoaded() {
+        control.win3DFlag = 0
+        if win3D != nil {           // so loadNext() closes previous images' 3D view
+            win3D.close()
+            win3D = nil
+        }
+        
         initializeWidgetGroup()
         wg.refresh()
         setImageViewResolution()
