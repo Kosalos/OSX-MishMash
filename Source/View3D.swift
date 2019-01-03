@@ -4,16 +4,18 @@ import Metal
 let NUMNODE:Int = Int(SIZE3D * SIZE3D)
 
 var height:Float = 10
-var vBuffer: MTLBuffer?
-var vBuffer2: MTLBuffer?
+var vBuffer: MTLBuffer! = nil
+var vBuffer2: MTLBuffer! = nil
+var iBufferT: MTLBuffer! = nil
 
 class View3D {
-    var iBufferT: MTLBuffer?
     var vData = Array(repeating:TVertex(), count:NUMNODE)
     var iDataT = Array<UInt16>()
     let vSize:Int = MemoryLayout<TVertex>.stride * NUMNODE
     
     func initialize() {
+        if vBuffer != nil  { return }
+        
         let fSize = Float(SIZE3D)
         
         var index:Int = 0
