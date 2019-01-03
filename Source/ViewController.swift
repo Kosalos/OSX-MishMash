@@ -90,7 +90,7 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
     //MARK: -
     
     func resizeIfNecessary() {
-        let minWinSize:CGSize = CGSize(width:700, height:700)
+        let minWinSize:CGSize = CGSize(width:700, height:710)
         var r:CGRect = (view.window?.frame)!
         var needSizing:Bool = false
         
@@ -229,6 +229,7 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
         wg.addSingleFloat("Y",&control.radialAngle,0,Float.pi/2,0.03, "RadialSym")
 
         wg.addLine()
+        wg.addCommand("Q","Randomize",.random)
         wg.addColoredCommand("Z",.auto,"Auto")
         wg.addLine()
         wg.addCommand("L","Load Next",.loadNext)
@@ -309,6 +310,9 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
             autoMoveFlag = !autoMoveFlag
             if autoMoveFlag { controlInitAutoMove() }
         case .gRandom :
+            controlRandomGrammar()
+            updateGrammarString()
+        case .random :
             controlRandom()
             updateGrammarString()
         case .shadow :

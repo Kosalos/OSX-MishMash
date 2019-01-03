@@ -1,3 +1,5 @@
+Note: All black screen? Keep pressing 'Q' till you get lucky.
+
 MishMash Fractal
 Collection of algorithms and UX from several other
 fractal apps, hoping to come with a new and interesting display.
@@ -75,6 +77,9 @@ K. 3D ROI
    Specify the position and size of the 3D Region Of Interest (ROI).
 
    Note: Click and Drag with the Right Mouse Button to specify the ROI directly.
+
+Q. Randomize
+   Randomly alter all parameters
 
 Z. Auto
    Toggle whether the program automatically slowly alters the parameters.

@@ -98,7 +98,7 @@ class Win3DViewController: NSViewController, NSWindowDelegate, WGDelegate {
     //MARK: -
     
     func resizeIfNecessary() {
-        let minWinSize:CGSize = CGSize(width:700, height:500)
+        let minWinSize:CGSize = CGSize(width:700, height:580)
         var r:CGRect = (view.window?.frame)!
         var needSizing:Bool = false
         
