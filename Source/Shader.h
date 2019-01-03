@@ -9,7 +9,7 @@
 
 #include <simd/simd.h>
 
-#define SIZE3D 256
+#define SIZE3D 255
 #define SIZE3Dm (SIZE3D - 1)
 
 #define NUM_FUNCTION 4
