@@ -491,7 +491,12 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
         
         commandEncoder.setComputePipelineState(pipeline[PIPELINE_FRACTAL])
         commandEncoder.setTexture(texture1, index: 0)
+
         // skip unused buffer 0
+        // Swift 5   app is screwed up if you skip loading a buffer
+        // so, load cBuffer, just to make it happy
+        commandEncoder.setBuffer(cBuffer, offset: 0, index: 0)
+
         commandEncoder.setBuffer(cBuffer, offset: 0, index: 1)
 
         commandEncoder.dispatchThreadgroups(threadGroups, threadsPerThreadgroup: threadGroupCount)
